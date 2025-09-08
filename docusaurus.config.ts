@@ -71,7 +71,11 @@ const config: Config = {
     image: "img/docusaurus-social-card.jpg",
     navbar: {
       title: "LangChain.js 非公式日本語ドキュメント",
-      logo: { alt: "Logo", src: "img/logo.svg" },
+      logo: {
+        alt: "LangChain.js",
+        src: "https://js.langchain.com/img/brand/wordmark.png",
+        srcDark: "https://js.langchain.com/img/brand/wordmark-dark.png",
+      },
 
       items: [
         {
