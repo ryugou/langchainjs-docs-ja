@@ -34,7 +34,7 @@ LangChain をインストールします。
    npm i langchain @langchain/core
     ```
   </TabItem>
-  <TabItem value="yarn" label="npm">
+  <TabItem value="yarn" label="yarn">
     ```bash
    yarn add langchain @langchain/core
     ```
@@ -76,7 +76,7 @@ export LANGSMITH_API_KEY="..."
         npm i @langchain/groq
             ```
         </TabItem>
-        <TabItem value="yarn" label="npm">
+        <TabItem value="yarn" label="yarn">
             ```bash
         yarn add langchain @langchain/groq
             ```
@@ -113,7 +113,7 @@ export LANGSMITH_API_KEY="..."
         npm i @langchain/openai
             ```
         </TabItem>
-        <TabItem value="yarn" label="npm">
+        <TabItem value="yarn" label="yarn">
             ```bash
         yarn add langchain @langchain/openai
             ```
@@ -147,7 +147,7 @@ export LANGSMITH_API_KEY="..."
         npm i @langchain/anthropic
             ```
         </TabItem>
-        <TabItem value="yarn" label="npm">
+        <TabItem value="yarn" label="yarn">
             ```bash
         yarn add langchain @langchain/anthropic
             ```
@@ -185,7 +185,7 @@ export LANGSMITH_API_KEY="..."
         npm i @langchain/google-genai
             ```
         </TabItem>
-        <TabItem value="yarn" label="npm">
+        <TabItem value="yarn" label="yarn">
             ```bash
         yarn add langchain @langchain/google-genai
             ```
@@ -223,7 +223,7 @@ export LANGSMITH_API_KEY="..."
         npm i @langchain/community
         ```
         </TabItem>
-        <TabItem value="yarn" label="npm">
+        <TabItem value="yarn" label="yarn">
         ```bash
         yarn add langchain @langchain/community
         ```

@@ -1,6 +1,6 @@
 ---
 title: はじめに
-slug: /how-to
+slug: /how_to
 sidebar_label: はじめに
 tags: [langchainjs, how-to]
 ---
