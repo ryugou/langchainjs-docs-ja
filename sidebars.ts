@@ -6,7 +6,21 @@ const sidebars: SidebarsConfig = {
     {
       type: "category",
       label: "チュートリアル",
-      items: ["tutorials/index", "tutorials/llm-chain"],
+      items: ["tutorials/index", "tutorials/llm-chain", "tutorials/retrievers"],
+    },
+    {
+      type: "category",
+      label: "使い方ガイド",
+      items: ["how_to/index"],
+    },
+    {
+      type: "category",
+      label: "コンセプトガイド",
+      items: [
+        "concepts/index",
+        "concepts/prompt_templates",
+        "concepts/chat_models",
+      ],
     },
   ],
   integrations: [

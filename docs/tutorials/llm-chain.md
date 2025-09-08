@@ -12,19 +12,19 @@ import TabItem from '@theme/TabItem';
 
 このクイックスタートでは、LangChain を使って「英語テキストを別の言語へ翻訳する」シンプルな LLM アプリを作成します。単一の LLM 呼び出しに少しのプロンプトを組み合わせただけの、比較的シンプルな構成ですが、LangChain を始めるのに最適です。実のところ、多くの機能は「適切なプロンプト＋ 1 回の LLM 呼び出し」だけで実装できます。
 
-このチュートリアルを読むと、次の概要がわかります：
+このチュートリアルを読むと、次の概要がわかります。
 
-- 言語モデルの使い方
+- [言語モデル](/concepts/chat_models)の使い方
 
-- プロンプトテンプレートの使い方
+- [プロンプトテンプレート](/concepts/prompt_templates)の使い方
 
-- LangSmith を使ったアプリのデバッグ／トレース方法
+- [LangSmith](https://docs.langchain.com/langsmith/home) を使ったアプリのデバッグ／トレース方法
 
 さっそく始めましょう！
 
 ## セットアップ
 
-インストール
+### インストール
 
 LangChain をインストールします。
 
@@ -48,11 +48,11 @@ LangChain をインストールします。
 
 より詳しくはインストールガイドをご覧ください。
 
-## LangSmith
+### LangSmith
 
-LangChain で作る多くのアプリは、複数ステップ・複数回の LLM 呼び出しを含みます。複雑になるほど、チェーンやエージェントの内部で「何が起きているか」を確認できることが重要になります。そこで役立つのが LangSmith です。
+LangChain で作る多くのアプリは、複数ステップ・複数回の LLM 呼び出しを含みます。複雑になるほど、チェーンやエージェントの内部で「何が起きているか」を確認できることが重要になります。そこで役立つのが [LangSmith](https://docs.langchain.com/langsmith/home) です。
 
-上記リンクからサインアップしたら、トレースを記録できるように環境変数を設定してください：
+上記リンクからサインアップしたら、トレースを記録できるように環境変数を設定してください。
 
 ```bash
 export LANGSMITH_TRACING="true"
@@ -332,7 +332,7 @@ export LANGSMITH_API_KEY="..."
 
     const messages = [
     new SystemMessage("以下の英文をイタリア語に翻訳してください"),
-    new HumanMessage("hi!"),
+    new HumanMessage("こんにちは！"),
     ];
 
     await model.invoke(messages);
@@ -386,22 +386,22 @@ export LANGSMITH_API_KEY="..."
     ```
 
 :::Tip
-LangSmith を有効化していれば、この実行は LangSmith に記録され、トレースを確認できます。トレースではトークン使用量、レイテンシ、温度などの標準パラメータ、その他の情報が表示されます。
+LangSmith を有効化していれば、この実行は LangSmith に記録され、[トレースを確認](https://smith.langchain.com/public/45f1a650-38fb-41e1-9b61-becc0684f2ce/r)できます。トレースではトークン使用量、レイテンシ、温度などの標準パラメータ、その他の情報が表示されます。
 :::
 
 ChatModel は メッセージオブジェクト を入力に受け取り、出力としてもメッセージオブジェクトを返します。テキスト以外に、会話ロール、ツールコール、トークンカウントなどの重要な情報を保持します。
 
-LangChain は 文字列 や OpenAI 形式 の入力にも対応しています。以下は同等です：
+LangChain は 文字列 や OpenAI 形式 の入力にも対応しています。以下は同等です。
 
 ```typescript
-await model.invoke("Hello");
-await model.invoke([{ role: "user", content: "Hello" }]);
-await model.invoke([new HumanMessage("hi!")]);
+await model.invoke("こんにちは");
+await model.invoke([{ role: "user", content: "こんにちは" }]);
+await model.invoke([new HumanMessage("こんにちは!")]);
 ```
 
-## ストリーミング
+### ストリーミング
 
-Runnable なので、非同期やストリーミングでの呼び出しにも標準対応します。個々のトークンをストリームで受け取る例：
+Runnable なので、非同期やストリーミングでの呼び出しにも標準対応します。個々のトークンをストリームで受け取る例
 
 ```typescript
 const stream = await model.stream(messages);
@@ -428,7 +428,7 @@ iao|
 
 プロンプトテンプレート は、この変換を支援するための LangChain の概念です。生のユーザー入力を受け取り、言語モデルに渡せる形（プロンプト）に整えて返します。
 
-ここでは、2 つの変数を取るテンプレートを作ります：
+ここでは、2 つの変数を取るテンプレートを作ります。
 
 - language：翻訳先の言語
 
@@ -438,7 +438,7 @@ iao|
 import { ChatPromptTemplate } from "@langchain/core/prompts";
 ```
 
-まず、システムメッセージ用の文字列を用意します：
+まず、システムメッセージ用の文字列を用意します。
 
 ```typescript
 const systemTemplate = "Translate the following from English into {language}";
@@ -541,7 +541,7 @@ LangSmith のトレースを見ると、（1）プロンプトテンプレート
 
 LangChain の中核概念については 概念ガイド（Conceptual Guides） を参照してください。
 
-より具体的な使い方は How-to ガイド の次のセクションが役立ちます：
+より具体的な使い方は How-to ガイド の次のセクションが役立ちます。
 
 - チャットモデル
 

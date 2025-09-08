@@ -1,7 +1,7 @@
 ---
-title: はじめに
+title: 概要
 slug: /
-sidebar_label: はじめに
+sidebar_label: 概要
 tags: [langchainjs, introduction]
 ---
 
