@@ -331,8 +331,8 @@ export LANGSMITH_API_KEY="..."
     import { HumanMessage, SystemMessage } from "@langchain/core/messages";
 
     const messages = [
-    new SystemMessage("以下の英文をイタリア語に翻訳してください"),
-    new HumanMessage("こんにちは！"),
+        new SystemMessage("以下の英文をイタリア語に翻訳してください"),
+        new HumanMessage("こんにちは！"),
     ];
 
     await model.invoke(messages);
